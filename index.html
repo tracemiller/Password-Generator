@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title> Password Generator </title>
+        <link rel = "stylesheet" href = "styles.css">
+    </head>
+    <body>
+        <h1> Random Password Generator </h1>
+        <h2> Easily generate a complex and secure password </h2>
+
+        <!--Creates the field that displays the generated password-->
+        <h3> Password: <label id = "password"></label></h3><br>
+
+        <!--Creates the button to generate the password-->
+        <button type = "button" id = "generate"> Generate Password </button>
+
+
+        <h2> Customize Password </h2>
+
+        <form>
+            <!--Password length adjustment-->
+            <p> Password length: <input type="number" id="characters" name="characters" requiredminlength="1" 
+                maxlength="50" size="10" value="12"> </p> 
+            
+            <!--Password complexity selections-->
+            <!--Uppercase selection-->
+            <div>
+                <input type="checkbox" id="uppercase" name="uppercase" checked>
+                <label for="uppercase">Uppercase</label>
+            </div>
+            <!--Lowercase selection-->
+            <div>
+                <input type="checkbox" id="lowercase" name="lowercase" checked>
+                <label for="lowercase">Lowercase</label>
+            </div>
+            <!--Numbers selection-->
+            <div>
+                <input type="checkbox" id="numbers" name="numbers" checked>
+                <label for="numbers">Numbers</label>
+            </div>
+            <!--Symbols selection-->
+            <div>
+                <input type="checkbox" id="symbols" name="symbols" checked>
+                <label for="symbols">Symbols</label>
+            </div>
+        </form>
+
+        <script src = "script.js"> </script>
+    </body>
+</html>
