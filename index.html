@@ -13,7 +13,7 @@
         <h3> Password: <label id = "password"></label></h3><br>
 
         <!--Creates the button to generate the password-->
-        <button onclick = "generatePassword()" > Generate Password</button>
+        <button type = "button" id = "generate"> Generate Password </button>
 
 
         <h2> Customize Password </h2>
@@ -21,7 +21,7 @@
         <form>
             <!--Password length adjustment-->
             <p> Password length: <input type="number" id="characters" name="characters" requiredminlength="1" 
-                maxlength="50" size="10" value="12" onblur="getVal()"> </p>
+                maxlength="50" size="10" value="12"> </p> 
             
             <!--Password complexity selections-->
             <!--Uppercase selection-->

@@ -1,67 +1,15 @@
-// Returns the value of the password length
-function getVal() {
-    const val=document.querySelector('input').value;
-    return val;
-    console.log(val);
+// Updates the password length that the user's inputs
+var pwsize;
+// Runs setsize function when a change to password length is made
+document.getElementById("characters").addEventListener("change", setsize);
+function setsize() {
+    pwsize = document.getElementById("characters");
+    // alert(pwsize.value)
 }
 
-function isChecked() {
-    const checkBox = document.getElementById('check1').checked;
-    if (checkBox === true) {
-      console.log(true);
-      } else {
-        console.log(false);
-    }
-}
-
-
-function setcharset() {
-    let usercharset = "";
-    var uppercasecheck = document.getElementById("uppercase"),
-        lowercasecheck = document.getElementById("lowercase"),
-          numberscheck = document.getElementById("numbers"),
-          symbolscheck = document.getElementById("symbols");
-    for (let i = 1; i < 5; i++) {
-        if (uppercasecheck.checked == true){
-            usercharset += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        } if (lowercasecheck.checked == true){
-            usercharset += "abcdefghijklmnopqrstuvwxyz";
-        } if (numberscheck.checked == true){
-            usercharset += "0123456789";
-        } if (symbolscheck.checked == true){
-            usercharset += "~!@#$%^&*()_+`-=[]\{}|;':";
-        } else {
-            alert("Not a valid customization!")
-        }
-    }
-    return usercharset;
-}
-
-
-//Generates the password
-function generatePassword() {
-    var length = getVal(),
-    //charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
-    charset = setcharset(),
-    retVal = "";
-
-    // Generates the password provided the password length
-    for(var i = 0, n = charset.length; i < length; ++i) {
-        retVal += charset.charAt(Math.floor(Math.random() * n));
-    }
-
-    // Displays the password to the webpage
-    document.getElementById("password").innerHTML = retVal;
-}
-
-
-/*
 // What happens when the button is clicked
 document.getElementById("generate").onclick = function(){
 
-    for(let i = 0; i < pwsize; i++) {
-
-    }
     // Generates a random number between 0 and 9
     let pw = Math.floor(Math.random() * 10);
 
@@ -70,8 +18,6 @@ document.getElementById("generate").onclick = function(){
 
 }
 
-
-// Generates a random number
 function randomNumber() {
 
     // Generates a random number between 0 and 9
@@ -79,7 +25,6 @@ function randomNumber() {
 
 }
 
-// Generates a random lower case letter
 function randomLowerCaseLetter() {
 
     // Initializes a constant with every letter in the alphabet
@@ -89,9 +34,8 @@ function randomLowerCaseLetter() {
     return lowerCaseAlphabet[Math.floor(Math.random() * lowerCaseAlphabet.length)]
 }
 
-// console.log(randomLowerCaseLetter())
+console.log(randomLowerCaseLetter())
 
-// Generates a random upper case letter
 function randomUpperCaseLetter() {
 
     // Initializes a constant with every letter in the alphabet
@@ -101,9 +45,8 @@ function randomUpperCaseLetter() {
     return upperCaseAlphabet[Math.floor(Math.random() * upperCaseAlphabet.length)]
 }
 
-// console.log(randomUpperCaseLetter())
+console.log(randomUpperCaseLetter())
 
-// Generates a random symbol
 function randomSymbol() {
 
     // Initializes a constant with every letter in the alphabet
@@ -113,5 +56,4 @@ function randomSymbol() {
     return upperCaseAlphabet[Math.floor(Math.random() * upperCaseAlphabet.length)]
 }
 
-// console.log(randomSymbol())
-*/
+console.log(randomSymbol())
